@@ -1,6 +1,6 @@
 Name:		texlive-docshots
-Version:	64986
-Release:	2
+Version:	65141
+Release:	1
 Summary:	TeX samples next to their PDF Snapshots
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/docshots
