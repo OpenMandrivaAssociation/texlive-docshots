@@ -1,5 +1,5 @@
 Name:		texlive-docshots
-Version:	65141
+Version:	69410
 Release:	1
 Summary:	TeX samples next to their PDF Snapshots
 Group:		Publishing
