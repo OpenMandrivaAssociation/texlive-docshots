@@ -3,7 +3,7 @@ Version:	69676
 Release:	1
 Summary:	TeX samples next to their PDF Snapshots
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/docshots
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/docshots
 License:	mit
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/docshots.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/docshots.doc.r%{version}.tar.xz
