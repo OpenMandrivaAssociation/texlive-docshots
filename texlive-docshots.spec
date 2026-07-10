@@ -1,40 +1,30 @@
-Name:		texlive-docshots
-Version:	69676
-Release:	1
-Summary:	TeX samples next to their PDF Snapshots
+%global tl_name docshots
+%global tl_revision 69676
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.4.3
+Release:	%{tl_revision}.1
+Summary:	TeX samples next to their PDF snapshots
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/docshots
 License:	mit
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/docshots.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/docshots.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/docshots.source.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/docshots.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/docshots.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/docshots.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Requires:	texlive(fancyvrb)
+Requires:	texlive(iexec)
+Requires:	texlive(pdfcrop)
+Requires:	texlive(pgf)
+Requires:	texlive(pgf-blur)
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This LaTeX package helps you show TeX code next to the
-corresponding PDF snapshots, in two-column formatting. You can
-use it either in .dtx documentation or in .tex files.
+This LaTeX package helps you show TeX code next to the corresponding PDF
+snapshots, in two-column formatting. You can use it either in .dtx
+documentation or in .tex files.
 
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%doc %{_texmfdistdir}/source/latex/docshots
-%{_texmfdistdir}/tex/latex/docshots
-%doc %{_texmfdistdir}/doc/latex/docshots
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
