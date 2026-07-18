@@ -1,9 +1,9 @@
 %global tl_name docshots
-%global tl_revision 69676
+%global tl_revision 79688
 
 Name:		texlive-%{tl_name}
 Epoch:		1
-Version:	0.4.3
+Version:	0.5.0
 Release:	%{tl_revision}.1
 Summary:	TeX samples next to their PDF snapshots
 Group:		Publishing
@@ -16,13 +16,16 @@ BuildArch:	noarch
 BuildSystem:	texlive
 Requires:	texlive(fancyvrb)
 Requires:	texlive(iexec)
+Requires:	texlive(lineno)
+Requires:	texlive(listings)
+Requires:	texlive(minted)
 Requires:	texlive(pdfcrop)
+Requires:	texlive(pdftexcmds)
 Requires:	texlive(pgf)
-Requires:	texlive(pgf-blur)
+Requires:	texlive(pgfopts)
 Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This LaTeX package helps you show TeX code next to the corresponding PDF
-snapshots, in two-column formatting. You can use it either in .dtx
-documentation or in .tex files.
+This package helps you render TeX examples from your DTX documentation
+and then embed PDF snapshots into it, next to the source TeX code.
 
